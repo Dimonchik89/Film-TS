@@ -1,0 +1,88 @@
+@import "../../style/vars.scss";
+
+.trailer-block {
+    padding: 55px 40px;
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $darkBlue;
+        opacity: .7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .trailer-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .trailer-content {
+        margin-top: 20px;
+
+        .trailer-show__btn {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            position: relative;
+
+            .trailer-show__play {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                color: $white;
+                font-size: 60px;
+            }
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 20px 0 20px 40px;
+                border-color: transparent transparent transparent $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+        }
+
+    }
+
+    .trailer-card__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.trailer-wrapper {
+    margin: 60px 0;
+    position: relative;
+
+    .trailer-button__block {
+        position: absolute;
+        top: 13px;
+        left: 10px;
+        z-index: 1;
+    }
+}
